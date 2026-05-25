@@ -516,6 +516,11 @@ func (in *ResourceMetric) DeepCopyInto(out *ResourceMetric) {
 		x := (*in).DeepCopy()
 		*out = &x
 	}
+	if in.MemoryBandwidth != nil {
+		in, out := &in.MemoryBandwidth, &out.MemoryBandwidth
+		x := (*in).DeepCopy()
+		*out = &x
+	}
 	return
 }
 
