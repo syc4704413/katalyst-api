@@ -339,8 +339,9 @@ type NodeMetricStatus struct {
 }
 
 type ResourceMetric struct {
-	CPU    *resource.Quantity `json:"cpu,omitempty"`
-	Memory *resource.Quantity `json:"memory,omitempty"`
+	CPU             *resource.Quantity `json:"cpu,omitempty"`
+	Memory          *resource.Quantity `json:"memory,omitempty"`
+	MemoryBandwidth *resource.Quantity `json:"memoryBandwidth,omitempty"`
 }
 
 type ResourceUsage struct {
