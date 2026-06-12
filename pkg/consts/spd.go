@@ -51,13 +51,15 @@ const (
 
 // The fields below are multi-dim fields, mainly used to represent fine-grained resource portraits of some head services.
 const (
-	SPDAggMetricNameMultiDimCpuSimd   = "cpu_simd"
-	SPDAggMetricNameMultiDimCpuScalar = "cpu_scalar"
-	SPDAggMetricNameMultiDimCpuBranch = "cpu_branch"
-	SPDAggMetricNameMultiDimMemBw     = "mem_bw"
-	SPDAggMetricNameMultiDimMemLat    = "mem_lat"
-	SPDAggMetricNameMultiDimMemL3Pki  = "mem_l3pki"
-	SPDAggMetricNameMultiDimDiskBw    = "disk_bw"
-	SPDAggMetricNameMultiDimNetBw     = "net_bw"
-	SPDAggMetricNameMultiDimPower     = "power"
+	SPDAggMetricNameMultiDimCpuUsage         = "cpu_usage"
+	SPDAggMetricNameMultiDimCpuSimd          = "cpu_simd"
+	SPDAggMetricNameMultiDimCpuScalar        = "cpu_scalar"
+	SPDAggMetricNameMultiDimCpuBranch        = "cpu_branch"
+	SPDAggMetricNameMultiDimMemBw            = "mem_bw"
+	SPDAggMetricNameMultiDimMemLat           = "mem_lat"
+	SPDAggMetricNameMultiDimMemL3Pki         = "mem_l3pki"
+	SPDAggMetricNameMultiDimDiskBw           = "disk_bw"
+	SPDAggMetricNameMultiDimNetBw            = "net_bw"
+	SPDAggMetricNameMultiDimPower            = "power"
+	SPDAggMetricNameMultiDimMbwUsagePerLimit = "mbw_usage_per_limit"
 )
