@@ -18,6 +18,7 @@ package v1alpha1
 
 import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/runtime"
 )
 
 // +genclient
@@ -74,4 +75,12 @@ type Strategy struct {
 	// Parameters are the parameters of the strategy
 	// +optional
 	Parameters map[string]string `json:"parameters,omitempty"`
+
+	Configs *StrategyConfigs `json:"configs,omitempty"`
+}
+
+type StrategyConfigs struct {
+	Scheduler   *runtime.RawExtension `json:"scheduler,omitempty"`
+	Rescheduler *runtime.RawExtension `json:"rescheduler,omitempty"`
+	Agent       *runtime.RawExtension `json:"agent,omitempty"`
 }
