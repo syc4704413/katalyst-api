@@ -68,12 +68,22 @@ type StrategyGroupConfigurationSpec struct {
 }
 
 type StrategyGroupConfig struct {
+	// ExperimentDimension names a nodeResourceProperties property whose values differ between groups.
+	// Empty keeps ordinary strategy grouping; the selected property must be reported on the nodes.
+	// +optional
+	ExperimentDimension string `json:"experimentDimension,omitempty"`
+
 	// GroupConfigs contains configs for every group,
 	// ratios of all group should sum up to 1.0.
 	GroupConfigs []GroupConfig `json:"groupConfigs,omitempty"`
 }
 
 type GroupConfig struct {
+	// ExperimentValue selects this group's value of ExperimentDimension.
+	// If omitted, the allocator chooses an unused observed value and persists the binding.
+	// +optional
+	ExperimentValue string `json:"experimentValue,omitempty"`
+
 	// Ratio indicates ratio of nodes belongs to this group
 	Ratio *float64 `json:"ratio"`
 

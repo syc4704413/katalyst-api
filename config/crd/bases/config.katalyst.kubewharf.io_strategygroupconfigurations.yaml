@@ -86,6 +86,11 @@ spec:
               config:
                 description: Config is custom field for StrategyGroupConfiguration
                 properties:
+                  experimentDimension:
+                    description: |-
+                      ExperimentDimension names a nodeResourceProperties property whose values differ between groups.
+                      Empty keeps ordinary strategy grouping; the selected property must be reported on the nodes.
+                    type: string
                   groupConfigs:
                     description: |-
                       GroupConfigs contains configs for every group,
@@ -110,6 +115,11 @@ spec:
                             - name
                             type: object
                           type: array
+                        experimentValue:
+                          description: |-
+                            ExperimentValue selects this group's value of ExperimentDimension.
+                            If omitted, the allocator chooses an unused observed value and persists the binding.
+                          type: string
                         ratio:
                           description: Ratio indicates ratio of nodes belongs to this
                             group
